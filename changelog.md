@@ -9,3 +9,5 @@
 - typings
 - tests
 
+## [0.0.2] - 11-02-2023
+- fixed values and keys inside the typings
