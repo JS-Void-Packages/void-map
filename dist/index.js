@@ -13,11 +13,11 @@ class VoidMap {
         }
     }
 
-    getKeys() {
+    keys() {
         return this.#keys
     }
 
-    getValues() {
+    values() {
         return this.#values
     }
 

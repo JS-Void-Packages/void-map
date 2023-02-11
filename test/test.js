@@ -12,6 +12,8 @@ map.put("sure", 8)
 for(let [key, value] of map.entries()) {
     console.log(key, value)
 }
+map.values().forEach(console.log)
 
 // filter the map with values > 10
 let filter = map.filter((key, value, index) => value>10)
+filter.mapToMap((key, value) => [ {key}, {value} ]);
