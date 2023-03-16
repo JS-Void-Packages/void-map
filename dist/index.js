@@ -13,6 +13,14 @@ class VoidMap {
         }
     }
 
+    containKey(key) {
+        return this.#keys.contain(key);
+    }
+
+    containValue(key) {
+        return this.#values.contain(key);
+    }
+
     keys() {
         return this.#keys
     }

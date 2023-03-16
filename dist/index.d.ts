@@ -3,6 +3,16 @@ import List from "void-list";
 export class VoidMap<K, V> {
 
     /**
+     * Return true if the map contain the key
+     */
+    containKey(key: K): boolean
+
+    /**
+     * Return true if the map contain the value
+     */
+    containValue(value: V): boolean
+
+    /**
      * Return a list containing all the map keys
      */
     keys(): List<K>
