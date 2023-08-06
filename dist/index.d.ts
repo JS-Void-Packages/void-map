@@ -3,6 +3,13 @@ import List from "void-list";
 export class VoidMap<K, V> {
 
     /**
+     * Add elements from a list of keys and values. Keys and Values must have the same size or it will throw an error.
+     * @param keys 
+     * @param values 
+     */
+    from(keys: K[] | List<K>, values: V[] | List<V>): VoidMap<K, V>
+
+    /**
      * Return true if the map contain the key
      */
     containKey(key: K): boolean

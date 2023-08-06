@@ -13,6 +13,30 @@ class VoidMap {
         }
     }
 
+    /**
+     * 
+     * @param {List|any[]} keys 
+     * @param {List|any[]} values 
+     */
+    from(keys, values) {
+        if(keys instanceof List && values instanceof List) {
+            if(keys.size() != values.size()) {
+                throw new RangeError("Error! You have more keys/values than keys/values. you need the same number of keys/values!")
+            }
+            this.#keys.fromList(keys);
+            this.#values.fromList(values);
+        }
+        else if(Array.isArray(keys) && Array.isArray(values)) {
+            if(keys.length != values.length) {
+                throw new RangeError("Error! You have more keys/values than keys/values. you need the same number of keys/values!")
+            }
+            this.#keys.fromArray(keys);
+            this.#values.fromArray(values);
+        }
+        // check the values are 
+        this.#validate();
+    }
+
     containKey(key) {
         return this.#keys.contain(key);
     }
