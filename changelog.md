@@ -16,4 +16,9 @@
 - added `containKey(k)` and `containValue(v)`
 
 ## [0.0.4] - 06-08-2023
-- added `from(keys, values);` that take a list of keys  and values and make a map from it
+- added `from(keys, values);` that take a list/array of keys and values and make a map from it
+
+## [0.0.5] - 15-01-2024
+- updated void-list
+- added `toJson()` that create a json map
+- added `static fromJson(json)` that create a voidMap from a json object
