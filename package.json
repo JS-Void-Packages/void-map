@@ -12,7 +12,7 @@
     "void"
   ],
   "repository": {
-    "url": "https://github.com/JS-Void-Packages/void-map",
+    "url": "git+https://github.com/JS-Void-Packages/void-map.git",
     "type": "git"
   },
   "author": "Mrthomas20121",
