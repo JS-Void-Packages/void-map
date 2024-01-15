@@ -3,6 +3,17 @@ import List from "void-list";
 export class VoidMap<K, V> {
 
     /**
+     * Create a new map from a json object
+     * @param json 
+     */
+    public static fromJson<A, B>(json: object): VoidMap<A, B>
+
+    /**
+     * Create a json object of the map
+     */
+    toJson(): object
+
+    /**
      * Add elements from a list of keys and values. Keys and Values must have the same size or it will throw an error.
      * @param keys 
      * @param values 

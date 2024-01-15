@@ -1,7 +1,14 @@
-const List = require("void-list")
+const { List } = require("void-list")
 
 class VoidMap {
+    /**
+     * @type {List}
+     */
     #keys = new List()
+
+    /**
+     * @type {List}
+     */
     #values = new List()
 
     // add an empty constructor
@@ -14,6 +21,27 @@ class VoidMap {
     }
 
     /**
+     * Return a json map of this map
+     */
+    toJson() {
+        let json = {};
+        for(let [key, value] of this.entries()) {
+            json[key] = value;
+        }
+
+        return json;
+    }
+
+    static fromJson(json) {
+        let map = new VoidMap();
+        for(let [key, value] of Object.entries(json)) {
+            map.put(key, value);
+        }
+
+        return map;
+    }
+
+    /**
      * 
      * @param {List|any[]} keys 
      * @param {List|any[]} values 
@@ -21,7 +49,7 @@ class VoidMap {
     from(keys, values) {
         if(keys instanceof List && values instanceof List) {
             if(keys.size() != values.size()) {
-                throw new RangeError("Error! You have more keys/values than keys/values. you need the same number of keys/values!")
+                throw new RangeError("Error! You have more keys or values than keys or values. you need the same number of keys/values!")
             }
             this.#keys.fromList(keys);
             this.#values.fromList(values);
