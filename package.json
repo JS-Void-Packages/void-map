@@ -1,6 +1,6 @@
 {
   "name": "void-map",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Add Java style Maps to Javascript",
   "main": "dist/index.js",
   "scripts": {
