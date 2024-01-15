@@ -6,7 +6,7 @@ export class VoidMap<K, V> {
      * Create a new map from a json object
      * @param json 
      */
-    public static fromJson<A, B>(json: object): VoidMap<A, B>
+    public static fromJson<B>(json: object): VoidMap<String, B>
 
     /**
      * Create a json object of the map

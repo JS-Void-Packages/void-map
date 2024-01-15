@@ -82,11 +82,11 @@ class VoidMap {
     }
 
     get(key) {
-        let index = this.#keys.indexOf(key)
+        let index = this.#keys.indexOf(key);
         if(index == -1) {
-            throw new RangeError(`Key ${key} does not exist in the map`)
+            throw new RangeError(`Key ${key} does not exist in the map`);
         }
-        return this.#values.get(index)
+        return this.#values.get(index);
     }
 
     /**
@@ -95,20 +95,20 @@ class VoidMap {
      * @returns 
      */
     getValue(predicate) {
-        return this.get(predicate(this.#keys))
+        return this.get(predicate(this.#keys));
     }
 
     put(key, value) {
-        this.#validate()
-        this.#keys.add(key)
-        this.#values.add(value)
+        this.#validate();
+        this.#keys.add(key);
+        this.#values.add(value);
     }
 
     remove(key) {
-        this.#validate()
-        let index = this.#keys.indexOf(key)
-        this.#keys.remove(index)
-        this.#values.remove(index)
+        this.#validate();
+        let index = this.#keys.indexOf(key);
+        this.#keys.remove(index);
+        this.#values.remove(index);
     }
 
     /**
@@ -116,7 +116,7 @@ class VoidMap {
      */
     forEach(predicate) {
         this.#validate()
-        for(let i = 0; i<this.#keys.length; i++) {
+        for(let i = 0; i<this.#keys.size(); i++) {
             let key = this.#keys.get(i)
             let value = this.#values.get(i)
             predicate(key, value, i)
@@ -167,7 +167,7 @@ class VoidMap {
     /**
      * @param {(key:any, value:any, index:number) => [any, any]} predicate 
      */
-     map(predicate) {
+     mapToMap(predicate) {
         let m = new VoidMap()
         for(let i = 0; i<this.#keys.size(); i++) {
             let key = this.#keys.get(i)

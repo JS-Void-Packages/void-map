@@ -22,3 +22,7 @@
 - updated void-list
 - added `toJson()` that create a json map
 - added `static fromJson(json)` that create a voidMap from a json object
+
+## [0.0.6] - 15-01-2024
+- fixed a typo with `forEach`
+- fixed a typo with mapToMap
