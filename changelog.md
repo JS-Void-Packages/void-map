@@ -5,7 +5,7 @@
 ## [0.0.1] - 06-12-2022
 
 ### Added
-- the basic void map
+- basic void map
 - typings
 - tests
 
@@ -26,3 +26,6 @@
 ## [0.0.6] - 15-01-2024
 - fixed a typo with `forEach`
 - fixed a typo with mapToMap
+## [0.0.7] - 06-02-2025
+- updated void list to latest
+- updated error handling
