@@ -11,12 +11,20 @@ class VoidMap {
      */
     #values = new List()
 
-    // add an empty constructor
+    /**
+     * Create a new voidmap
+     */
     constructor() {}
 
     #validate() {
-        if(this.#keys.size() != this.#values.size()) {
-            throw new RangeError("Error! this map keys and values length is not the same")
+        let keySize = this.#keys.size();
+        let valueSize = this.#values.size();
+
+        if(keySize === valueSize) {
+            return;
+        }
+        else {
+            throw new RangeError("this map's keys and values do not have the same size.");
         }
     }
 
@@ -74,11 +82,11 @@ class VoidMap {
     }
 
     keys() {
-        return this.#keys
+        return this.#keys;
     }
 
     values() {
-        return this.#values
+        return this.#values;
     }
 
     get(key) {
@@ -127,13 +135,13 @@ class VoidMap {
      * @param {(key:any, value:any, index:number) => boolean} predicate 
      */
     filter(predicate) {
-        let map = new VoidMap()
+        let map = new VoidMap();
         this.#validate()
         for(let i = 0; i<this.#keys.size(); i++) {
-            let key = this.#keys.get(i)
-            let value = this.#values.get(i)
+            let key = this.#keys.get(i);
+            let value = this.#values.get(i);
             if(predicate(key, value, i)) {
-                map.put(key, value)
+                map.put(key, value);
             }
         }
         return map
@@ -145,9 +153,9 @@ class VoidMap {
      entries() {
         let list = new List()
         for(let i = 0; i<this.#keys.size(); i++) {
-            let key = this.#keys.get(i)
-            let value = this.#values.get(i)
-            list.add([key, value])
+            let key = this.#keys.get(i);
+            let value = this.#values.get(i);
+            list.add([key, value]);
         }
         return list
     }
@@ -158,9 +166,9 @@ class VoidMap {
     map(predicate) {
         let list = new List()
         for(let i = 0; i<this.#keys.size(); i++) {
-            let key = this.#keys.get(i)
-            let value = this.#values.get(i)
-            list.add(predicate(key, value, i))
+            let key = this.#keys.get(i);
+            let value = this.#values.get(i);
+            list.add(predicate(key, value, i));
         }
     }
 
@@ -170,10 +178,10 @@ class VoidMap {
      mapToMap(predicate) {
         let m = new VoidMap()
         for(let i = 0; i<this.#keys.size(); i++) {
-            let key = this.#keys.get(i)
-            let value = this.#values.get(i)
-            let predi = predicate(key, value, i)
-            m.put(predi[0], predi[1])
+            let key = this.#keys.get(i);
+            let value = this.#values.get(i);
+            let predi = predicate(key, value, i);
+            m.put(predi[0], predi[1]);
         }
     }
 }
