@@ -18,6 +18,6 @@
   "author": "Mrthomas20121",
   "license": "MIT",
   "dependencies": {
-    "void-list": "^1.1.5"
+    "void-list": "^1.1.8"
   }
 }
